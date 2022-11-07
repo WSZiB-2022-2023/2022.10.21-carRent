@@ -1,6 +1,6 @@
-package pl.edu.wszib.car.rent;
+package pl.edu.wszib.car.rent.model;
 
-public class Car {
+public class Vehicle {
     private String brand;
     private String model;
     private int year;
@@ -8,10 +8,10 @@ public class Car {
     private boolean rent;
     private String plate;
 
-    public Car() {
+    public Vehicle() {
     }
 
-    public Car(String brand, String model, int year,
+    public Vehicle(String brand, String model, int year,
                double price, String plate) {
         this.brand = brand;
         this.model = model;
@@ -67,5 +67,22 @@ public class Car {
 
     public void setPlate(String plate) {
         this.plate = plate;
+    }
+
+    @Override
+    public String toString() {
+        return new StringBuilder()
+                .append(this.getBrand())
+                .append(" ")
+                .append(this.getModel())
+                .append(" Rocznik: ")
+                .append(this.getYear())
+                .append(" Cena: ")
+                .append(this.getPrice())
+                .append(" Rejestracja: ")
+                .append(this.getPlate())
+                .append(" Dostepny: ")
+                .append(this.isRent() ? "Nie" : "Tak")
+                .toString();
     }
 }
